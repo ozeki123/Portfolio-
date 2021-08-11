@@ -1,7 +1,24 @@
 .home-container{
+    width: 100%;
     position: absolute;
     overflow: hidden;
+
+    .header{
+        width: 90%;
+        height: 10vh;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        .header-right{
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+    }
     .project-container{
         height: 100vh;
     }
 }
+
