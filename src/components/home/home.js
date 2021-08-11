@@ -6,14 +6,16 @@ import './home.scss';
 gsap.registerPlugin(ScrollTrigger);
 
 const Home = () => {
-    let container = document.querySelector(".home-container")
+    
 
-    let height = container.clientHeight;
-    document.body.style.height = height + "px"
+    
 
     useEffect(() => {
+        let container = document.querySelector(".home-container");
+        let height = container.clientHeight;
+        document.body.style.height = height + "px";
         console.log(container);
-        console.log(height)
+        console.log(container)
 
         gsap.to(container, {
             y: -(height - document.documentElement.clientHeight),
