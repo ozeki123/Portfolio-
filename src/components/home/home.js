@@ -63,10 +63,10 @@ const Home = () => {
                         <Test/>
                     </div>
                     <div className="project-container">
-                        <h1>Project 2</h1>
+                        <Test/>
                     </div>
                     <div className="project-container">
-                        <h1>Project 3</h1>
+                        <Test/>
                     </div>
                 </div>
                 

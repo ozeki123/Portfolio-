@@ -2,15 +2,59 @@
     width: 100vw;
     display: flex;
     justify-content: center;
+    margin-top: 1rem;
+}
+
+.project-left{
+    height: 400px;
+    width: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 0;
+    z-index: 1;
+
+    .project-contents{
+        position: relative;
+        left: 5rem;
+        h1{
+            font-family: Ogg;
+            font-weight: 100;
+            font-size: 4.2rem;
+            text-transform: uppercase;
+        }
+    
+        .sub-section{
+            width: 70%;
+            display: flex;
+            justify-content: center;
+            .rectangle{
+                width: 8px;
+                height: 46px;
+                background-color: rgb(167, 167, 167);
+            }
+            .sub-header{
+                display: flex;
+                flex-direction: column;
+                justify-self: center;
+                p{
+                    // line-height: 15px;
+                    font-size: 0.85rem;
+                    letter-spacing: -0.1px;
+                    position: relative;
+                    bottom: 4px;
+                    left: 0.7rem;
+                }
+            }
+        }
+    }
+
+    
 }
 
 .project-right{
-    width: 800px;
-    height: 500px;
-    // height: 100%;
-    // display: flex;
-    // flex-direction: column;
-    // justify-content: center;
+    width: 650px;
+    height: 600px;
     position: relative;
     overflow: hidden;
     // right: 2.8rem;

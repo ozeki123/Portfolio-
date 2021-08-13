@@ -14,8 +14,8 @@
 
 
         .header{
-            width: 85%;
-            height: 23vh;
+            width: 82%;
+            height: 20vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -25,11 +25,14 @@
                 display: flex;
                 justify-content: space-between;
                 line-height: 10px;
-                font-size: 0.95rem;
+                font-size: 0.9rem;
                 
                     .header-left{
+                        line-height: 5px;
                         h2{
-                            font-weight: 400;
+                            font-size: 1.25rem;
+                            font-weight: 300;
+                            letter-spacing: 0.3px;
                         }
 
                         p{
@@ -39,7 +42,7 @@
 
                     .header-right{
                         height: 100%;
-                        // width: 11%;
+                        width: 150px;
                         display: flex;
                         flex-direction: row;
                         justify-content: space-between;
@@ -49,7 +52,7 @@
         }
 
         .project-container{
-            height: 100vh;
+            height: 80vh;
             // background-color: black;          
         }
         
