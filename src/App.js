@@ -1,5 +1,6 @@
 import './App.scss';
 import Home from './components/home/home'
+import Test from './components/test/test';
 
 function App() {
   return (

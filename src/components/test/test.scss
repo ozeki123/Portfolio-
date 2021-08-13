@@ -1,0 +1,36 @@
+.project-container{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
+
+.project-right{
+    width: 800px;
+    height: 500px;
+    // height: 100%;
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: center;
+    position: relative;
+    overflow: hidden;
+    // right: 2.8rem;
+    &:after{
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        right: 0;
+        background: white;
+    }
+    .project-image{
+        img{
+            width: 100%;
+            height: 100%;
+            
+        }
+    }
+}
+
+
+

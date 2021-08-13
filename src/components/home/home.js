@@ -1,23 +1,31 @@
 import React, {useEffect, useRef} from 'react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
+import Test from '../test/test';
+
 import './home.scss';
+import StrideImage from '../../assets/images/StrideImage.jpg'
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Home = () => {
     
-
+    let imageRef = useRef(null);
+    let containerRef = useRef(null);
     
-
+    let tl = gsap.timeline();
+    
     useEffect(() => {
+
         let container = document.querySelector(".home-contents");
         let height = container.clientHeight;
         document.body.style.height = height + "px";
-        console.log(container);
-        console.log(container.clientHeight)
+        // console.log(container);
+        // console.log(container.clientHeight);
+        // console.log(imageRef.current);
+        
 
-        gsap.to(container, {
+        tl.to(container, {
             y: -(height - document.documentElement.clientHeight),
             scrollTrigger: {
                 trigger: document.body,
@@ -26,10 +34,16 @@ const Home = () => {
                 scrub: 1
             }
         })
+
+        tl.to(containerRef.current, {
+            duration: 0.1,
+            css: { visibility: "visible" }
+        })
+        
     })
 
     return (
-        <div className="home-container">
+        <div className="home-container" ref={containerRef}>
             <div className="home-contents">
                 <div className="header">
                     <div className="header-contents">
@@ -44,15 +58,18 @@ const Home = () => {
                         </div>
                     </div>
                 </div>
-                <div className="project-container">
-                    <h1>Project 1</h1>
+                <div className="banner">
+                    <div className="project-container">
+                        <Test/>
+                    </div>
+                    <div className="project-container">
+                        <h1>Project 2</h1>
+                    </div>
+                    <div className="project-container">
+                        <h1>Project 3</h1>
+                    </div>
                 </div>
-                <div className="project-container">
-                    <h1>Project 2</h1>
-                </div>
-                <div className="project-container">
-                    <h1>Project 3</h1>
-                </div>
+                
             </div>
            
         </div>
