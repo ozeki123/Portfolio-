@@ -45,19 +45,6 @@ const Home = () => {
     return (
         <div className="home-container" ref={containerRef}>
             <div className="home-contents">
-                <div className="header">
-                    <div className="header-contents">
-                        <div className="header-left">
-                            <h2>andrew ozeki</h2>
-                            <p>FRONT END DEVELOPER</p>
-                        </div>
-                        <div className="header-right">
-                            <p>Work</p>
-                            <p>About</p>
-                            <p>Contact</p>
-                        </div>
-                    </div>
-                </div>
                 <div className="banner">
                     <div className="project-container">
                         <Test/>
