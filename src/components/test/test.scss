@@ -2,7 +2,7 @@
     width: 100vw;
     display: flex;
     justify-content: center;
-    margin-top: 1rem;
+    margin-top: 1.5rem;
 }
 
 .project-left{
@@ -16,11 +16,11 @@
 
     .project-contents{
         position: relative;
-        left: 5rem;
+        left: 2.5rem;
         h1{
             font-family: Ogg;
             font-weight: 100;
-            font-size: 4.2rem;
+            font-size: 4.1rem;
             text-transform: uppercase;
         }
     
@@ -30,8 +30,8 @@
             justify-content: center;
             .rectangle{
                 width: 8px;
-                height: 46px;
-                background-color: rgb(167, 167, 167);
+                height: 44px;
+                background-color: rgb(194, 194, 194);
             }
             .sub-header{
                 display: flex;
@@ -42,8 +42,9 @@
                     font-size: 0.85rem;
                     letter-spacing: -0.1px;
                     position: relative;
-                    bottom: 4px;
+                    bottom: 4.6px;
                     left: 0.7rem;
+                    color: rgb(131, 131, 131);
                 }
             }
         }
@@ -56,6 +57,7 @@
     width: 650px;
     height: 600px;
     position: relative;
+    right: 2.5rem;
     overflow: hidden;
     // right: 2.8rem;
     &:after{

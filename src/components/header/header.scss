@@ -1,0 +1,28 @@
+.header-container{
+    display: flex;
+    justify-content: center;
+    .header-contents{
+        width: 82%;
+        position: fixed;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        p{
+    
+        }
+        .header-left{
+    
+            h1{
+    
+            }
+    
+        }
+    
+        .header-right{
+            display: flex;
+    
+        }
+    }
+}
+
+

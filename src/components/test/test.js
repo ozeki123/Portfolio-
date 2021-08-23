@@ -1,6 +1,7 @@
 import React, {useEffect, useRef} from 'react';
 import './test.scss';
 import StrideImage from '../../assets/images/StrideImage.jpg';
+import StrideImg from '../../assets/images/stride-img.jpg'
 import { gsap } from 'gsap';
 import CSSRulePlugin from 'gsap/dist/CSSRulePlugin';
 
@@ -23,12 +24,13 @@ const Test = () => {
             width: "0%",
             ease: "Power2.easeOut",
             delay: 0.4,
+            
         }).from(imageRef, {
             duration: 1.7,
             scale: 1.3,
             ease: "Power2.easeOut",
             delay: -2,
-            opacity: 0
+            opacity: 0,
         })
     })
     return (
@@ -47,7 +49,7 @@ const Test = () => {
             </div>
             <div className="project-right">
                 <div className="project-image">
-                    <img ref={el => imageRef = el} src={StrideImage}/>
+                    <img ref={el => imageRef = el} src={StrideImg}/>
                 </div>
             </div>
         </div>
