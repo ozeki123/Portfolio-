@@ -4,7 +4,7 @@
     top: 0;
     .header-contents{
         width: 82%;
-        // position: fixed;
+        position: fixed;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -21,6 +21,10 @@
     
         .header-right{
             display: flex;
+            
+            button{
+                z-index: 9999;
+            }
     
         }
     }
