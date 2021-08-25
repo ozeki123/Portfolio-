@@ -2,6 +2,7 @@ import React, {useEffect, useRef} from 'react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import Test from '../test/test';
+import Header from '../header/header';
 
 import './home.scss';
 import StrideImage from '../../assets/images/StrideImage.jpg'
@@ -25,15 +26,15 @@ const Home = () => {
         // console.log(imageRef.current);
         
 
-        tl.to(container, {
-            y: -(height - document.documentElement.clientHeight),
-            scrollTrigger: {
-                trigger: document.body,
-                start: "top top",
-                end: "bottom bottom",
-                scrub: 1
-            }
-        })
+        // tl.to(container, {
+        //     y: -(height - document.documentElement.clientHeight),
+        //     scrollTrigger: {
+        //         trigger: document.body,
+        //         start: "top top",
+        //         end: "bottom bottom",
+        //         scrub: 1
+        //     }
+        // })
 
         tl.to(containerRef.current, {
             duration: 0.1,
@@ -45,19 +46,6 @@ const Home = () => {
     return (
         <div className="home-container" ref={containerRef}>
             <div className="home-contents">
-                <div className="header">
-                    <div className="header-contents">
-                        <div className="header-left">
-                            <h2>andrew ozeki</h2>
-                            <p>FRONT END DEVELOPER</p>
-                        </div>
-                        <div className="header-right">
-                            <p>Work</p>
-                            <p>About</p>
-                            <p>Contact</p>
-                        </div>
-                    </div>
-                </div>
                 <div className="banner">
                     <div className="project-container">
                         <Test/>
@@ -69,9 +57,7 @@ const Home = () => {
                         <Test/>
                     </div>
                 </div>
-                
             </div>
-           
         </div>
     )
 }
