@@ -2,8 +2,15 @@
 .about-container{
     height: 100%;
 
+    .home-contents{
+
+    }
+
     .about-section{
         height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
 }
 
