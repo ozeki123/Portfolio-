@@ -3,7 +3,7 @@ import Home from './components/home/home';
 import Test from './components/test/test';
 import About from './components/about/about';
 import Header from './components/header/header';
-import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, withRouter, useLocation} from "react-router-dom";
 import React, {useEffect, useRef} from 'react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
@@ -12,23 +12,33 @@ gsap.registerPlugin(ScrollTrigger);
 
 
 function App() {
-	let tl = gsap.timeline();
+	const location = useLocation();
+	console.log(location.pathname);
+	
+	RouteChange()
 
-	useEffect(() => {
-		let container = document.querySelector(".home-contents");
-        let height = container.clientHeight;
-        document.body.style.height = height + "px";
-
-		tl.to(container, {
-            y: -(height - document.documentElement.clientHeight),
-            scrollTrigger: {
-                trigger: document.body,
-                start: "top top",
-                end: "bottom bottom",
-                scrub: 1
-            }
-        })
-	})
+	function RouteChange() {
+		const location = useLocation();
+		let tl = gsap.timeline();
+		if (location.pathname !== "/about" ){
+			console.log("location.pathname");
+		};
+		useEffect(() => {
+			let container = document.querySelector(".home-contents");
+			let height = container.clientHeight;
+			document.body.style.height = height + "px";
+	
+			tl.to(container, {
+				y: -(height - document.documentElement.clientHeight),
+				scrollTrigger: {
+					trigger: document.body,
+					start: "top top",
+					end: "bottom bottom",
+					scrub: 1
+				}
+			})
+		}, [location, tl]);
+	}
 
 	return (
 		<Router>
@@ -42,4 +52,4 @@ function App() {
 	);
 	}
 
-export default App;
+export default withRouter(App);
