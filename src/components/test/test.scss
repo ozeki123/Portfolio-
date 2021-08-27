@@ -2,6 +2,7 @@
     width: 100vw;
     display: flex;
     justify-content: center;
+    align-items: center;
     margin-top: 1.5rem;
 }
 
@@ -55,7 +56,7 @@
 
 .project-right{
     width: 650px;
-    height: 600px;
+    // height: 600px;
     position: relative;
     right: 2.5rem;
     overflow: hidden;
@@ -70,6 +71,7 @@
         background: white;
     }
     .project-image{
+        display: flex;
         img{
             width: 100%;
             height: 100%;
