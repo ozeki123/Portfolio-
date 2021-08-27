@@ -12,39 +12,49 @@ gsap.registerPlugin(ScrollTrigger);
 
 
 function App() {
-	const location = useLocation();
-	console.log(location.pathname);
-	
-	RouteChange()
 
-	function RouteChange() {
-		const location = useLocation();
-		let tl = gsap.timeline();
-		if (location.pathname !== "/about" ){
-			console.log("location.pathname");
-		};
-		useEffect(() => {
-			let container = document.querySelector(".home-contents");
-			let height = container.clientHeight;
-			document.body.style.height = height + "px";
-	
-			tl.to(container, {
-				y: -(height - document.documentElement.clientHeight),
-				scrollTrigger: {
-					trigger: document.body,
-					start: "top top",
-					end: "bottom bottom",
-					scrub: 1
-				}
-			})
-		}, [location, tl]);
+	let routes = [];
+
+	//Fetches current route location from Header component
+	const pull_data = (data) => {
+		routes.push(data);
+		console.log(data, routes)
+
+		function RouteChange() {
+			let tl = gsap.timeline();
+
+		//Trigger smooth scrolling effect on each Route
+			useEffect(() => {
+				let container = document.querySelector(".home-contents");
+				let height = container.clientHeight;
+				document.body.style.height = height + "px";
+		
+				tl.to(container, {
+					y: -(height - document.documentElement.clientHeight),
+					scrollTrigger: {
+						trigger: document.body,
+						start: "top top",
+						end: "bottom bottom",
+						scrub: 1
+					}
+				})
+			});
+		}
+
+		if (data !== routes[routes.length-2]){
+			RouteChange()
+		}
+		
+		
 	}
+
+	//if the last element of the array changes, then run RouteChange
 
 	return (
 		<Router>
-			<Header/>
+			<Header func={pull_data}/>
 			<Switch>
-				<Route exact path="/" component={Home} />
+				<Route exact path="/" onClick = "onRouteClick()" component={Home}/>
 				<Route path="/about" component={About} />
 				<Route path="/contact" component={About} />
 			</Switch>

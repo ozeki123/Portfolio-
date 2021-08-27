@@ -1,10 +1,11 @@
 import React from 'react';
 import './header.scss';
-import { Link, useHistory } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
-const Header = () => {
-    const history = useHistory();
-    const handleOnClick = () => history.push('/about')
+const Header = (props) => {
+    const location = useLocation();
+    props.func(location.pathname);
+
     return (
         <div className="header-container">
             <div className="header-contents">
