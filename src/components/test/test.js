@@ -12,6 +12,7 @@ const Test = () => {
     let imageRef = useRef(null);
     let containerRef = useRef(null);
 
+    //Create image reveal animation effect
     let imageReveal = CSSRulePlugin.getRule(".project-right:after");
 
     let tl = gsap.timeline();
@@ -19,12 +20,14 @@ const Test = () => {
     useEffect(() => {
         console.log(imageReveal);
 
+        //css :after reveal animation
         tl.to(imageReveal, {
             duration: 2,
             width: "0%",
             ease: "Power2.easeOut",
             delay: 0.4,
-            
+        
+        //reveal animation
         }).from(imageRef, {
             duration: 1.7,
             scale: 1.3,
