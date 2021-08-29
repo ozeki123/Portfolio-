@@ -3,6 +3,7 @@ import Home from './components/home/home';
 import Test from './components/test/test';
 import About from './components/about/about';
 import Header from './components/header/header';
+import Contact from './components/contact/contact';
 import { BrowserRouter as Router, Switch, Route, withRouter, useLocation} from "react-router-dom";
 import React, {useEffect, useRef} from 'react';
 import gsap from 'gsap';
@@ -44,11 +45,7 @@ function App() {
 		if (data !== routes[routes.length-2]){
 			RouteChange()
 		}
-		
-		
 	}
-
-	//if the last element of the array changes, then run RouteChange
 
 	return (
 		<Router>
@@ -56,7 +53,7 @@ function App() {
 			<Switch>
 				<Route exact path="/" onClick = "onRouteClick()" component={Home}/>
 				<Route path="/about" component={About} />
-				<Route path="/contact" component={About} />
+				<Route path="/contact" component={Contact} />
 			</Switch>
 		</Router>
 	);
